@@ -1,6 +1,7 @@
 #include "extract_worker.h"
 #include "fileio.h"
 #include "bank_extract.h"
+#include <cstring>
 
 ExtractWorker::ExtractWorker(QObject *parent) : QObject(parent) {}
 
@@ -55,7 +56,7 @@ void ExtractWorker::extract_fsb()
                 continue;
             }
 
-            result = FMOD_System_Create(&system);
+            result = FMOD_System_Create(&system, FMOD_VERSION);
             if (result != FMOD_OK || (result = FMOD_System_Init(system, 1, FMOD_INIT_NORMAL, nullptr)) != FMOD_OK)
             {
                 emit updateConsole(FMOD_ErrorString(result));

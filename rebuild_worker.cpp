@@ -1,6 +1,8 @@
 #include "rebuild_worker.h"
 #include "fileio.h"
 #include <fsbank_errors.h>
+#include <cstring>
+#include <QDataStream>
 
 RebuildWorker::RebuildWorker(QObject *parent) : QObject(parent) {}
 

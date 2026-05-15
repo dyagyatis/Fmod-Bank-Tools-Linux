@@ -4,6 +4,7 @@
 #include "qfileinfo.h"
 #include <QVector>
 #include <QtGlobal>
+#include <QDataStream>
 
 int bank_extract::extract(QString bankPath, quint32 &fsbCount)
 {
